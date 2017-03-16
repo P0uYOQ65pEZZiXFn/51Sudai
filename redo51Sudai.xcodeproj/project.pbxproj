@@ -12,8 +12,8 @@
 		4D9884E01E794C7500E098A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D9884DE1E794C7500E098A9 /* Main.storyboard */; };
 		4D9884E21E794C7500E098A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D9884E11E794C7500E098A9 /* Assets.xcassets */; };
 		4D9884E51E794C7500E098A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D9884E31E794C7500E098A9 /* LaunchScreen.storyboard */; };
-		4DE6F5BC1E7A5DDE007C7858 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4DE6F5BB1E7A5DDE007C7858 /* config.xml */; };
 		4DE6F5BE1E7A6099007C7858 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE6F5BD1E7A6099007C7858 /* Config.swift */; };
+		4DE6F6041E7A83F8007C7858 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = 4DE6F6031E7A83F8007C7858 /* config.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,8 +24,8 @@
 		4D9884E11E794C7500E098A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4D9884E41E794C7500E098A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4D9884E61E794C7500E098A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4DE6F5BB1E7A5DDE007C7858 /* config.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = config.xml; sourceTree = "<group>"; };
 		4DE6F5BD1E7A6099007C7858 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		4DE6F6031E7A83F8007C7858 /* config.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = config.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +58,9 @@
 		4D9884D91E794C7500E098A9 /* redo51Sudai */ = {
 			isa = PBXGroup;
 			children = (
-				4DE6F5BB1E7A5DDE007C7858 /* config.xml */,
 				4D9884DA1E794C7500E098A9 /* AppDelegate.swift */,
 				4D9884DC1E794C7500E098A9 /* ViewController.swift */,
+				4DE6F6031E7A83F8007C7858 /* config.xml */,
 				4DE6F5BD1E7A6099007C7858 /* Config.swift */,
 				4D9884DE1E794C7500E098A9 /* Main.storyboard */,
 				4D9884E11E794C7500E098A9 /* Assets.xcassets */,
@@ -133,7 +133,7 @@
 				4D9884E51E794C7500E098A9 /* LaunchScreen.storyboard in Resources */,
 				4D9884E21E794C7500E098A9 /* Assets.xcassets in Resources */,
 				4D9884E01E794C7500E098A9 /* Main.storyboard in Resources */,
-				4DE6F5BC1E7A5DDE007C7858 /* config.xml in Resources */,
+				4DE6F6041E7A83F8007C7858 /* config.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
