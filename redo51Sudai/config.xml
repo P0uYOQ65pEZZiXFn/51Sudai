@@ -1,5 +1,5 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
-<!-- 打包的时候只需要修改 runtime 值指定使用哪个服务器， debug的时候注意修改为自己电脑的ip -->
+<!-- 打包的时候只需要修改 runtime 值指定使用哪个服务器 -->
 <App runtime = "debug">
     <runtime name = "debug">
         <serverUrl>http://192.168.1.6/hmservices/</serverUrl>
