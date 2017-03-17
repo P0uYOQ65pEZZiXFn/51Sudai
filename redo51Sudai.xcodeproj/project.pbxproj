@@ -39,6 +39,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D0BD56C1E7B8185008B2BB5 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
 		4D9884CE1E794C7500E098A9 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +69,7 @@
 				4D9884DC1E794C7500E098A9 /* ViewController.swift */,
 				4DE6F6031E7A83F8007C7858 /* config.xml */,
 				4DE6F5BD1E7A6099007C7858 /* Config.swift */,
+				4D0BD56C1E7B8185008B2BB5 /* Public */,
 				4D9884DE1E794C7500E098A9 /* Main.storyboard */,
 				4D9884E11E794C7500E098A9 /* Assets.xcassets */,
 				4D9884E31E794C7500E098A9 /* LaunchScreen.storyboard */,
@@ -103,6 +111,7 @@
 					4D9884D61E794C7500E098A9 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 575RLG9KN6;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};

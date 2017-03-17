@@ -13,9 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let xml = Config.init()
-        xml.readXml()
-        print("\(xml.imageUrl),\(xml.serverUrl)")
+        
+        print("\(Config.shareInstance.imageUrl),\(Config.shareInstance.serverUrl)")
     }
 
     override func didReceiveMemoryWarning() {

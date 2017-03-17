@@ -8,46 +8,63 @@
 
 import Foundation
 
-class Config: NSObject {
+class Config: NSObject, XMLParserDelegate {
     public var imageUrl = ""
     public var serverUrl = ""
-    override init() {
+    //每个xml对象
+    var server :ServerMode = ServerMode()
+    // xml 数组
+    var servers :NSMutableArray = NSMutableArray()
+    //选择的runtime名字
+    var selectString = ""
+    // 当前值
+    var currentString = ""
+    // 服务器名字
+    var name = ""
+    //创建单例
+    internal static let shareInstance = Config()
+    private override init(){
         super.init()
-    }
-    func readXml() {
-        let path = Bundle.main.path(forResource: "config", ofType: "xml")
-        let xmlParser = XmlParser.init()
-        if path != nil {
-            let xml = xmlParser.parser(path: path!)
-            self.imageUrl = xml.imageUrl
-            self.serverUrl = xml.serverUrl
+        let arr = self.readXml()
+        
+        for i in 1...arr.count {
+            let jjj = i - 1
+            let server:ServerMode = arr[jjj] as! ServerMode
+            if self.selectString == server.name {
+                self.imageUrl = server.imageUrl
+                self.serverUrl = server.serverUrl
+            }
         }
     }
-}
-
-class XmlParser: NSObject ,XMLParserDelegate {
-    public var imageUrl = ""
-    public var serverUrl = ""
-    func parser(path: String) -> XmlParser {
+    //读取xml文件
+    func readXml() -> NSMutableArray {
+        var arr = NSMutableArray()
+        let path = Bundle.main.path(forResource: "config", ofType: "xml")
+        if path != nil {
+            arr = self.parser(path: path!)
+        }
+        return arr
+    }
+    
+    // 解析xml
+    func parser(path: String) -> NSMutableArray {
         let data = NSData.init(contentsOfFile: path)
         let xmlParser = XMLParser.init(data: data as! Data)
         xmlParser.delegate = self
         xmlParser.parse()
-        return self
+        return self.servers
     }
-    var currentString = ""
-    var getValue = ""
     
     //MARK: 开始解析
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-        let release = attributeDict["name"]
+        if elementName == "App" {
+            self.selectString = attributeDict["runtime"]!
+        }
         if elementName == "runtime" {
-            if attributeDict["name"] == release {
-                self.getValue = "get"
-            }
-            else {
-                self.getValue = "no"
-            }
+            self.name = attributeDict["name"]!
+            let server = ServerMode.init()
+            self.server = server
+            self.server.name = self.name
         }
     }
     
@@ -63,13 +80,24 @@ class XmlParser: NSObject ,XMLParserDelegate {
     
     //MARK: 解析结束
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        if self.getValue == "get" {
-            if elementName == "serverUrl" {
-                self.serverUrl = self.currentString
-            }
-            if elementName == "imageUrl" {
-                self.imageUrl = self.currentString
-            }
+        if elementName == "runtime" {
+            self.servers.add(server)
+        }
+        if elementName == "serverUrl" {
+            let  serverUrl = self.currentString
+            self.server.serverUrl = serverUrl
+        }
+        else if elementName == "imageUrl" {
+            let  imageUrl = self.currentString
+            self.server.imageUrl = imageUrl
         }
     }
 }
+
+// 服务器对象
+struct ServerMode {
+    var     serverUrl        = ""
+    var     imageUrl         = ""
+    var     name             = ""
+}
+
