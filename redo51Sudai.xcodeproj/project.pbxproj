@@ -15,6 +15,8 @@
 		4D0BD5881E7BB58A008B2BB5 /* CameraSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0BD57D1E7BB58A008B2BB5 /* CameraSingleton.swift */; };
 		4D0BD5891E7BB58A008B2BB5 /* DoMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0BD57F1E7BB58A008B2BB5 /* DoMain.swift */; };
 		4D0BD58C1E7BB58A008B2BB5 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0BD5821E7BB58A008B2BB5 /* HUD.swift */; };
+		4D389D8B1E7FCFA900C2DCC0 /* SWXMLHash+TypeConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D389D881E7FCFA900C2DCC0 /* SWXMLHash+TypeConversion.swift */; };
+		4D389D8C1E7FCFA900C2DCC0 /* SWXMLHash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D389D8A1E7FCFA900C2DCC0 /* SWXMLHash.swift */; };
 		4D9884DB1E794C7500E098A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9884DA1E794C7500E098A9 /* AppDelegate.swift */; };
 		4D9884DD1E794C7500E098A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9884DC1E794C7500E098A9 /* ViewController.swift */; };
 		4D9884E01E794C7500E098A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D9884DE1E794C7500E098A9 /* Main.storyboard */; };
@@ -33,6 +35,9 @@
 		4D0BD57D1E7BB58A008B2BB5 /* CameraSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraSingleton.swift; sourceTree = "<group>"; };
 		4D0BD57F1E7BB58A008B2BB5 /* DoMain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoMain.swift; sourceTree = "<group>"; };
 		4D0BD5821E7BB58A008B2BB5 /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		4D389D881E7FCFA900C2DCC0 /* SWXMLHash+TypeConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SWXMLHash+TypeConversion.swift"; sourceTree = "<group>"; };
+		4D389D891E7FCFA900C2DCC0 /* SWXMLHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWXMLHash.h; sourceTree = "<group>"; };
+		4D389D8A1E7FCFA900C2DCC0 /* SWXMLHash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWXMLHash.swift; sourceTree = "<group>"; };
 		4D9884D71E794C7500E098A9 /* redo51Sudai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = redo51Sudai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D9884DA1E794C7500E098A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D9884DC1E794C7500E098A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +65,7 @@
 			children = (
 				4D0BD5741E7BB0B1008B2BB5 /* Account.swift */,
 				4D0BD5761E7BB208008B2BB5 /* Extention.swift */,
+				4D389D871E7FCFA900C2DCC0 /* SWXMLHash */,
 				4D0BD5781E7BB58A008B2BB5 /* Base */,
 				4D0BD57C1E7BB58A008B2BB5 /* Camera */,
 				4D0BD57E1E7BB58A008B2BB5 /* DoMain */,
@@ -92,6 +98,16 @@
 				4D0BD5821E7BB58A008B2BB5 /* HUD.swift */,
 			);
 			path = DoMain;
+			sourceTree = "<group>";
+		};
+		4D389D871E7FCFA900C2DCC0 /* SWXMLHash */ = {
+			isa = PBXGroup;
+			children = (
+				4D389D881E7FCFA900C2DCC0 /* SWXMLHash+TypeConversion.swift */,
+				4D389D891E7FCFA900C2DCC0 /* SWXMLHash.h */,
+				4D389D8A1E7FCFA900C2DCC0 /* SWXMLHash.swift */,
+			);
+			path = SWXMLHash;
 			sourceTree = "<group>";
 		};
 		4D9884CE1E794C7500E098A9 = {
@@ -206,8 +222,10 @@
 				4D0BD5751E7BB0B1008B2BB5 /* Account.swift in Sources */,
 				4D0BD5881E7BB58A008B2BB5 /* CameraSingleton.swift in Sources */,
 				4D0BD5851E7BB58A008B2BB5 /* BannerView.swift in Sources */,
+				4D389D8C1E7FCFA900C2DCC0 /* SWXMLHash.swift in Sources */,
 				4D0BD5771E7BB208008B2BB5 /* Extention.swift in Sources */,
 				4D0BD58C1E7BB58A008B2BB5 /* HUD.swift in Sources */,
+				4D389D8B1E7FCFA900C2DCC0 /* SWXMLHash+TypeConversion.swift in Sources */,
 				4D0BD5871E7BB58A008B2BB5 /* BaseHasNoNavigationViewController.swift in Sources */,
 				4D9884DB1E794C7500E098A9 /* AppDelegate.swift in Sources */,
 				4DE6F5BE1E7A6099007C7858 /* Config.swift in Sources */,

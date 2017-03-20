@@ -8,6 +8,8 @@
 
 import Foundation
 
+/*效率低、占用内存小，自己尝试的解析*/
+// MARK:   使用的是系统自带的XMLParserDelegate，XML－－sax解析
 class Config: NSObject, XMLParserDelegate {
     public var imageUrl = ""
     public var serverUrl = ""
@@ -101,3 +103,38 @@ struct ServerMode {
     var     name             = ""
 }
 
+
+
+
+
+/*效率好、耗用内存，数据小 使用dom 效率高一些*/
+
+
+// MARK:   使用的是系统自带的SWXMLHash，XML－－dom解析
+class Config_DOM: NSObject {
+    private  var xml:XMLIndexer!
+    public   var serverURL      = ""
+    public   var imageURL       = ""
+    internal static let shareInstance = Config_DOM()
+    override init() {
+        super.init()
+        self.readXML()
+    }
+    
+    func readXML(){
+        if let configPath = Bundle.main.path(forResource: "config", ofType: "xml") {
+            let configs = try! NSString(contentsOfFile: configPath, encoding: String.Encoding.utf8.rawValue)
+            xml =  SWXMLHash.parse(configs as String)
+            let root = xml["App"]
+            let runTime = root.element?.allAttributes["runtime"]
+            if let r = runTime {
+                for elementsR in root.children{
+                    if r.text == elementsR.element?.allAttributes["name"]!.text {
+                        self.serverURL = elementsR["server"].element?.text ?? ""
+                        self.imageURL = elementsR["imageUrl"].element?.text ?? ""
+                    }
+                }
+            }
+        }
+    }
+}
