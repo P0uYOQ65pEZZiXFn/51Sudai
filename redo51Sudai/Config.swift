@@ -113,8 +113,8 @@ struct ServerMode {
 // MARK:   使用的是系统自带的SWXMLHash，XML－－dom解析
 class Config_DOM: NSObject {
     private  var xml:XMLIndexer!
-    public   var serverURL      = ""
-    public   var imageURL       = ""
+    public   var serverUrl      = ""
+    public   var imageUrl       = ""
     internal static let shareInstance = Config_DOM()
     override init() {
         super.init()
@@ -130,8 +130,8 @@ class Config_DOM: NSObject {
             if let r = runTime {
                 for elementsR in root.children{
                     if r.text == elementsR.element?.allAttributes["name"]!.text {
-                        self.serverURL = elementsR["server"].element?.text ?? ""
-                        self.imageURL = elementsR["imageUrl"].element?.text ?? ""
+                        self.serverUrl = elementsR["serverUrl"].element?.text ?? ""
+                        self.imageUrl = elementsR["imageUrl"].element?.text ?? ""
                     }
                 }
             }
