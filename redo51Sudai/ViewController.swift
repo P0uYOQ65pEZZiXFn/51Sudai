@@ -16,9 +16,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func click(_ sender: Any) {
-        print("\(Config.shareInstance.imageUrl),\(Config.shareInstance.serverUrl)")
+        print("\(Config.shareInstance.imageUrl)---\(Config.shareInstance.serverUrl)")
         HUD.showError(string: "网络错误", vc: self)
-        print("\(Config_DOM.shareInstance.imageUrl)")
+        print("\(Config_DOM.shareInstance.imageUrl)---\(Config_DOM.shareInstance.serverUrl)")
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
