@@ -16,7 +16,7 @@ protocol CameraDelegate{
 
 class Camera: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     //config start ----
-    weak  var delegate:CameraDelegate?{
+    weak  var delegate:CameraDelegate? {
         didSet{
         }
     }

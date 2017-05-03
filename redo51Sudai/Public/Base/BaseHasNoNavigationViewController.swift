@@ -41,6 +41,23 @@ class BaseHasNoNavigationViewController: UIViewController {
         }
     }
     
+    // MARK: storyBoard之间的跳转
+    func getUIStoryBoard(storyBoardName: String) -> UIStoryboard {
+        return UIStoryboard.init(name: storyBoardName, bundle: Bundle.main)
+    }
+    
+    func getUIViewController(storyBoard: UIStoryboard, controllerIdentifier: String) -> UIViewController {
+        return storyBoard.instantiateViewController(withIdentifier: controllerIdentifier)
+    }
+    
+    func storyBoardNavigationPush(storyBoardName: String, controllerIdentifier: String, settingBlockPushVC: ((UIViewController?)->())?) -> UIViewController {
+        let storyBoard = self.getUIStoryBoard(storyBoardName: storyBoardName)
+        let pushViewController = self.getUIViewController(storyBoard: storyBoard, controllerIdentifier: controllerIdentifier)
+        settingBlockPushVC?(pushViewController)
+        self.navigationController?.pushViewController(pushViewController, animated: true)
+        return pushViewController
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.shadowImage = UIImage.init()
