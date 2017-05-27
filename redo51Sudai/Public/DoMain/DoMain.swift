@@ -21,7 +21,7 @@ class DoMain: NSObject {
         return rect.size
     }
     
-    // MARK: 把格式化的JSON格式的字符串转换成字典 有错误 没用 解析不在这
+    // MARK: 把格式化的JSON格式的字符串转换成字典 
     public class func dictionaryWith(jsonString: String) -> NSDictionary {
         let nilDic: NSDictionary = NSDictionary()
         if jsonString.isEmpty {

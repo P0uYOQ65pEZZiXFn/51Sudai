@@ -8,17 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: BaseHasNoNavigationViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    @IBAction func click(_ sender: Any) {
-        print("\(Config.shareInstance.imageUrl)---\(Config.shareInstance.serverUrl)")
-        HUD.showError(string: "网络错误", vc: self)
-        print("\(Config_DOM.shareInstance.imageUrl)---\(Config_DOM.shareInstance.serverUrl)")
+    @IBAction func click_action(_ sender: Any) {
+        let path = "http://192.168.1.24:8080/app/index/activities.action"
+        let widthHeightString = "\(Z_FRAME_WIDTH)-\(Z_FRAME_HEIGHT)"
+        Http.get(url: path, params: ["resolution":"\(widthHeightString)"], completeHandler: { (dic, response, error) in
+            print("\(String(describing: dic?["res_code"]))")
+            print("\(String(describing: dic?["res_data"]))")
+            print("\(String(describing: dic?["res_msg"]))")
+        })
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

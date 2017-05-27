@@ -51,7 +51,7 @@ class Config: NSObject, XMLParserDelegate {
     // 解析xml
     func parser(path: String) -> NSMutableArray {
         let data = NSData.init(contentsOfFile: path)
-        let xmlParser = XMLParser.init(data: data as! Data)
+        let xmlParser = XMLParser.init(data: data! as Data)
         xmlParser.delegate = self
         xmlParser.parse()
         return self.servers
